@@ -10,7 +10,7 @@
 
     <groupId>no.cantara</groupId>
     <artifactId>dropwizard-hello-world-application</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -18,7 +18,7 @@
         <developerConnection>scm:git:git@github.com:Cantara/dropwizard-hello-world-application.git</developerConnection>
         <connection>scm:git:git@github.com:Cantara/dropwizard-hello-world-application.git</connection>
         <url>https://github.com/Cantara/dropwizard-hello-world-application</url>
-      <tag>dropwizard-hello-world-application-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <properties>
