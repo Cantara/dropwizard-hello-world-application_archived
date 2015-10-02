@@ -25,3 +25,5 @@ buildNumber.properties
 .idea/
 *.iml
 
+logs/
+log/
