@@ -2,10 +2,10 @@
 server:
   applicationConnectors:
     - type: http
-      port: 8080
+      port: 21580
   adminConnectors:
     - type: http
-      port: 8081
+      port: 21581
 
 logging:
 

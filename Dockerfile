@@ -12,14 +12,14 @@ RUN chown hellouser:hellouser /home/hellouser/hello-world.yml
 ADD docker/hello-world_override.properties /home/hellouser/hello-world-override.properties
 RUN chown hellouser:hellouser /home/hellouser/hello-world-override.properties
 
-EXPOSE 8080 8081 62911 1898
+EXPOSE 21500:21599
 
 WORKDIR "/home/hellouser"
 CMD [ \
     "java", \
     "-Xdebug", \
-    "-Xrunjdwp:transport=dt_socket,address=62911,server=y,suspend=n", \
-    "-Dcom.sun.management.jmxremote.port=1898", \
+    "-Xrunjdwp:transport=dt_socket,address=21515,server=y,suspend=n", \
+    "-Dcom.sun.management.jmxremote.port=21516", \
     "-Dcom.sun.management.jmxremote.ssl=false", \
     "-Dcom.sun.management.jmxremote.authenticate=false", \
     "-Djava.rmi.server.hostname=localhost", \
