@@ -18,6 +18,7 @@ public class ManagedThreadPool implements Managed {
 
     @Override
     public void start() throws Exception {
+        log.info("Starting managed thread-pool...");
         executorService = Executors.newFixedThreadPool(10);
     }
 
@@ -31,7 +32,7 @@ public class ManagedThreadPool implements Managed {
                 executorService.shutdownNow(); // Cancel currently executing tasks
                 // Wait a while for tasks to respond to being cancelled
                 if (!executorService.awaitTermination(60, TimeUnit.SECONDS))
-                    System.err.println("Pool did not terminate");
+                    log.warn("Pool did not terminate");
             }
         } catch (InterruptedException ie) {
             // (Re-)Cancel if current thread also interrupted
