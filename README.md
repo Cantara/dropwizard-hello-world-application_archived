@@ -1,3 +1,9 @@
 # dropwizard-hello-world-application
 A runnable hello-world devops-ready java application built on DropWizard, Spring IoC, and more
 
+# Optional
+Create and install a local version of dropwizard-hello-world-api
+
+# Usage 
+mvn archetype:generate  -DarchetypeGroupId=no.cantara -DarchetypeArtifactId=dropwizard-hello-world-application-archetype -DarchetypeCatalog=http://mvnrepo.cantara.no/content/repositories/snapshots
+
