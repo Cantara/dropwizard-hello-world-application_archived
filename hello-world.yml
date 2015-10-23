@@ -1,5 +1,9 @@
 
 server:
+
+  # This rootPath must match that which is defined in no.cantara.dwsample.api.ApplicationConstants.ROOT_PATH
+  rootPath: /hello-world/*
+
   applicationConnectors:
     - type: http
       port: 8080

@@ -1,4 +1,5 @@
 server:
+  rootPath: /hello-world/*
   applicationConnectors:
     - type: http
       port: 0
