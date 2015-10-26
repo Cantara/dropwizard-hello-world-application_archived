@@ -46,6 +46,10 @@ logging:
       timeZone: Europe/Oslo
       maxFileSize: 10MB
 
+views:
+  .ftl:
+    strict_syntax: yes
+
 # <a comma separated string of the packages that contain your @Api annotated resources>
 swagger:
   resourcePackage: no.cantara.dwsample

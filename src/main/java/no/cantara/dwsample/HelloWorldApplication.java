@@ -9,6 +9,7 @@ import io.dropwizard.lifecycle.Managed;
 import io.dropwizard.servlets.tasks.Task;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.dropwizard.views.ViewBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import no.cantara.dwsample.spring.SpringContextLoaderListener;
@@ -37,6 +38,12 @@ public class HelloWorldApplication extends Application<HelloWorldDropwizardConfi
         bootstrap.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
         bootstrap.addBundle(new Java8Bundle());
         bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
+        bootstrap.addBundle(new ViewBundle<HelloWorldDropwizardConfiguration>() {
+            @Override
+            public Map<String, Map<String, String>> getViewConfiguration(HelloWorldDropwizardConfiguration config) {
+                return config.getViewRendererConfiguration();
+            }
+        });
         bootstrap.addBundle(new SwaggerBundle<HelloWorldDropwizardConfiguration>() {
             @Override
             protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(HelloWorldDropwizardConfiguration configuration) {

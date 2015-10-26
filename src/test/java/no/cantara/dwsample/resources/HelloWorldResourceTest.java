@@ -20,10 +20,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.reset;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class HelloWorldResourceTest {
 
@@ -59,9 +56,16 @@ public class HelloWorldResourceTest {
     }
 
     @Test
-    public void testGetPerson() {
+    public void thatGetPersonIncrementsCounter() {
         assertThat(resources.client().target(no.cantara.dwsample.api.HelloWorldResource.PATH).request().get(Saying.class))
                 .isEqualTo(new Saying(3, "Hello, Mr. Smith!"));
         verify(counterService).next();
+    }
+
+    @Test
+    public void thatGetSpecificPlanet2ContainsJohnAndMercury() {
+        String actual = resources.client().target(no.cantara.dwsample.api.HelloWorldResource.PATH_SPECIFIC_PLANET + "/1").request().get(String.class);
+        assertThat(actual).contains("John");
+        assertThat(actual).contains("Mercury");
     }
 }

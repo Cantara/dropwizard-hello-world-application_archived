@@ -3,6 +3,7 @@ package no.cantara.dwsample.resources;
 import com.codahale.metrics.annotation.Timed;
 import no.cantara.dwsample.api.Planet;
 import no.cantara.dwsample.api.Saying;
+import no.cantara.dwsample.api.SpecificPlanet;
 import no.cantara.dwsample.domain.counter.CounterService;
 import org.constretto.annotation.Configuration;
 import org.constretto.annotation.Configure;
@@ -52,5 +53,20 @@ public class HelloWorldResource implements no.cantara.dwsample.api.HelloWorldRes
         Saying saying = new Saying(counterService.next(), value);
         log.trace("{}", fields(saying));
         return saying;
+    }
+
+    @Override
+    public SpecificPlanet helloSpecificPlanet(String id) {
+        log.trace("{} {} {}", v("method", HttpMethod.GET), v("path", HelloWorldResource.PATH_SPECIFIC_PLANET), fields(id));
+        String planetName = "Earth";
+        switch(id) {
+            case "1":
+                planetName = "Mercury";
+                break;
+            case "2":
+                planetName = "Jupiter";
+                break;
+        }
+        return new SpecificPlanetView(new Planet(planetName, "John"));
     }
 }
