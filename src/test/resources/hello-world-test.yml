@@ -14,5 +14,9 @@ logging:
   appenders:
     - type: console
 
+views:
+  .ftl:
+    strict_syntax: yes
+
 swagger:
   resourcePackage: no.cantara.dwsample
