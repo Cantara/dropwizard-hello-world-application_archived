@@ -37,7 +37,7 @@ public class HelloWorldApplication extends Application<HelloWorldDropwizardConfi
     public void initialize(Bootstrap<HelloWorldDropwizardConfiguration> bootstrap) {
         bootstrap.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
         bootstrap.addBundle(new Java8Bundle());
-        bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/", "index.html"));
         bootstrap.addBundle(new ViewBundle<HelloWorldDropwizardConfiguration>() {
             @Override
             public Map<String, Map<String, String>> getViewConfiguration(HelloWorldDropwizardConfiguration config) {
