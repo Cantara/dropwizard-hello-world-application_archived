@@ -6,7 +6,7 @@
         <groupId>no.cantara</groupId>
         <artifactId>dropwizard-hello-world-parent</artifactId>
         <version>7</version>
-        <relativePath>../dropwizard-hello-world-parent/pom.xml</relativePath>
+        <!--<relativePath>../dropwizard-hello-world-parent/pom.xml</relativePath>-->
     </parent>
 
     <groupId>no.cantara</groupId>
