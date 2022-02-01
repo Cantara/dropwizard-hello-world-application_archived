@@ -31,7 +31,7 @@
         <repository>
             <id>cantara</id>
             <name>Cantara Release Repository</name>
-            <url>http://mvnrepo.cantara.no/content/repositories/releases/</url>
+            <url>https://mvnrepo.cantara.no/content/repositories/releases/</url>
             <releases><enabled>true</enabled></releases>
             <snapshots><enabled>false</enabled></snapshots>
         </repository>
